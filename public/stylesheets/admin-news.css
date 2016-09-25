@@ -1,0 +1,149 @@
+.con {
+    position: absolute;
+    top: 51px;
+    bottom: 50px;
+    left: 0;
+    width: 100%;
+    background-color: #e4e4e4;
+}
+
+.con .left-con {
+    float: left;
+    height: 100%;
+    width: 300px;
+    margin-left: -100%;
+    background-color: #e4e4e4;
+    border-right: 1px solid #333;
+}
+
+.con .right-con {
+    float: left;
+    height: 100%;
+    width: 100%;
+    padding-left: 300px;
+    background-color: #fff;
+}
+
+.list-con {
+    height: 100%;
+    overflow: auto;
+}
+
+.caozuo {
+    width: 100px;
+}
+
+.title {
+    width: 500px;
+}
+
+.category {
+    width: 150px;
+}
+
+.set {
+    cursor: pointer;
+}
+
+.set:hover {
+    color: #35b555;
+}
+
+.delete {
+    cursor: pointer;
+}
+
+.delete:hover {
+    color: #35b555;
+}
+
+.container {
+    margin-top: 30px;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #666;
+    border-radius: 5px;
+}
+
+.container .form-group>input {
+    display: inline-block;
+}
+
+.news-id {
+    width: 50px;
+}
+
+.news-title {
+    height: 80px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+}
+
+.news-category {
+    width: 100px;
+}
+
+.add-date {
+    width: 200px;
+}
+
+.news-tab {
+    width: 200px;
+}
+
+.user{
+    display: inline-block;
+    float: right;
+}
+
+.user span{
+    font:14px arial;
+    line-height: 50px;
+    color:#9d9d9d;
+}
+
+.user span#logout{
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.user span#logout:hover{
+    color: #fff;
+}
+
+/*显示控制*/
+
+/*#news-list {
+    width: 100%;
+}*/
+
+#set-news {
+    display: none;
+}
+
+#add-news {
+    display: none;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #333;
+}
+
+
+/*功能性类*/
+
+.ml-20 {
+    margin-left: 20px;
+}
+
+.md {
+    text-align: center;
+    margin: 0 auto;
+}

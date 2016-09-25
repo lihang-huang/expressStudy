@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>百度新闻</title>
+    <link rel="stylesheet" href="/stylesheets/cube.min.css">
+    <link rel="stylesheet" href="/stylesheets/news.css">
+    <script src="/javascripts/jquery.1.10.2.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <!-- 头部信息 -->
+        <a href="#" class="icon float-left" id="head-icon1"></a>
+        <a href="#" class="icon float-left" id="head-icon2"></a>
+        <a href="#" class="icon float-right" id="head-icon4"></a>
+        <a href="#" class="icon float-right" id="head-icon3"></a>
+    </header>
+    <nav>
+        <!-- 导航条 -->
+        <!-- 导航栏中:百家，本地，娱乐能够发送请求 -->
+        <span class="cell"><i></i><a href="#">精选</a></span>
+        <span class="cell change-btn" id="various" data-tab="various"><i></i><a href="">百家</a></span>
+        <span class="cell change-btn" id="location" data-tab="location"><i></i><a href="">本地</a></span>
+        <span class="cell change-btn" id="entertainment" data-tab="entertainment"><i></i><a href="">娱乐</a></span>
+        <span class="cell"><i></i><a href="#">社会</a></span>
+        <span class="cell"><i></i><a href="#">军事</a></span>
+    </nav>
+    <nav>
+        <span class="cell"><i></i><a href="#">女人</a></span>
+        <span class="cell"><i></i><a href="#">搞笑</a></span>
+        <span class="cell" id="double-cell"><i></i><a href="#">互联网</a></span>
+        <span class="cell"><i></i><a href="#">科技</a></span>
+        <span class="cell"><i></i><a href="#">更多</a></span>
+    </nav>
+    <section class="container" id="various-page"></section>
+    <section class="container" id="local-page">
+    </section>
+    <section class="container" id="entertainment-page">
+    </section>
+    <!-- 	<div class="more">
+		<p>点击查看更多</p>
+	</div> -->
+    <p id="test"></p>
+</body>
+<script src="/javascripts/baiduNews.js"></script>
+
+</html>

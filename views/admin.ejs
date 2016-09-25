@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adminstrator</title>
+    <link rel="stylesheet" href="/stylesheets/cube.min.css">
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/admin-news.css">
+    <script src="/javascripts/jquery.1.10.2.min.js"></script>
+    <script src="/javascripts/jquery.cookie.js"></script>
+    <script src="/javascripts/jquery.form.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <a class="navbar-brand" href="http://localhost:3000">Baidu_news</a>
+            </div>
+            <div class="user">
+                <span>你好，<span id="username"></span></span>
+                <span id="logout">注销</span>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="con">
+        <div class="right-con list-con">
+            <table class="table table-striped" id="news-list">
+                <thead>
+                    <tr>
+                        <th>#ID</th>
+                        <th class="title">news title</th>
+                        <th class="category">news category</th>
+                        <th>img1</th>
+                        <th>img2</th>
+                        <th>img2</th>
+                        <th>add time</th>
+                        <th class="caozuo">操作</th>
+                    </tr>
+                    <tbody id="news-con">
+                    <!-- 通过后端请求 -->
+                    </tbody>
+                </thead>
+            </table>
+            <!-- 修改新闻部分 -->
+            <form class="container" role="form" id="set-news" enctype="mutipart/form-data">
+                <h3 class="md">修改新闻</h3>
+                <div class="form-group">
+                    <label for="news-id">ID:</label>
+                    <input type="text" class="form-control news-id" id="s-news-id" readonly="readonly" value="" required="required" name="newsId">
+                </div>
+                <div class="form-group">
+                    <label for="news-title">News Title:</label>
+                    <input type="text" class="form-control news-title" id="s-news-title" placeholder="请输入新闻标题..." value="" required="required" name="newsTitle"> 
+                </div>
+                <div class="form-group">
+                    <label for="news-category">News Category:</label>
+                    <input type="text" class="form-control news-category" id="s-news-category" placeholder="新闻标签..." value=""  name="newsCategory">
+                </div>
+                <div class="form-group">
+                    <label for="news-img1">News img1:</label>
+                    <input type="file" class="form-control news-img" id="s-news-img1" accept="image/png,image/jpg,image/jpeg" multiple="multiple" name = "img">
+                    <p class="help-block">*百家与娱乐页签此项必须上传png,jpg,jpeg文件</p>
+                </div>
+                <div class="form-group">
+                    <label for="news-img2">News img2:</label>
+                    <input type="file" class="form-control news-img" id="s-news-img2" accept="image/png,image/jpg,image/jpeg" multiple="multiple" name = "img">
+                    <p class="help-block">*娱乐页签此项必须上传png,jpg,jpeg文件</p>
+                </div>
+                <div class="form-group">
+                    <label for="news-img3">News img3:</label>
+                    <input type="file" class="form-control news-img" id="s-news-img3" accept="image/png,image/jpg,image/jpeg" multiple="multiple" name = "img">
+                    <p class="help-block">*娱乐页签此项必须上传png,jpg,jpeg文件</p>
+                </div>
+                <div class="form-group">
+                    <label for="date">Add date:</label>
+                    <input type="date" class="form-control add-date" id="s-date" value="" required="required" name="addDate">
+                </div>
+                <div class="form-group">
+                    <label for="news-tab">新闻页签：</label>
+                    <select class="form-control news-tab" id="s-news-tab" required="required" name="newsTab">
+                        <option class="s-news-tab" id="various">various</option>
+                        <option class="s-news-tab" id="location">location</option>
+                        <option class="s-news-tab" id="entertainment">entertaiment</option>
+                    </select>
+                    <p class="help-block">*请填写所属新闻页签：various代表百家；location代表本地；entertaiment代表娱乐</p>
+                </div>
+                <button type="submit" class="btn btn-primary ml-20" id="set-submit">修改</button>
+                <button type="reset" class="btn btn-primary ml-20">重置</button>
+            </form>
+            <!-- 添加新闻部分 -->
+            <form class="container" role="form" id="add-news" action="" method="" enctype="mutipart/form-data">
+                <h3 class="md">添加新闻</h3>
+                <div class="form-group">
+                    <label for="news-id">ID:</label>
+                    <input type="text" class="form-control news-id" id="news-id" placeholder="" value="" disabled required="required" name="newsId">
+                </div>
+                <div class="form-group">
+                    <label for="news-title">News Title:</label>
+                    <input type="text" class="form-control news-title" id="news-title" placeholder="请输入新闻标题..." value="" required="required" name="newsTitle">
+                </div>
+                <div class="form-group">
+                    <label for="news-category">News Category:</label>
+                    <input type="text" class="form-control news-category" id="news-category" placeholder="新闻标签..." value=""  name="newsCategory">
+                </div>
+                <div class="form-group">
+                    <label for="news-img1">News img1:</label>
+                    <input type="file" class="form-control news-img" id="news-img1" accept="image/png,image/jpg,image/jpeg" multiple="multiple" name="img">
+                    <p class="help-block">*百家与娱乐页签此项必须上传png,jpg,jpeg文件</p>
+                </div>
+                <div class="form-group">
+                    <label for="news-img2">News img2:</label>
+                    <input type="file" class="form-control news-img" id="news-img2" accept="image/png,image/jpg,image/jpeg" multiple="multiple" name="img">
+                    <p class="help-block">*娱乐页签必须上传png,jpg,jpeg文件</p>
+                </div>
+                <div class="form-group">
+                    <label for="news-img3">News img3:</label>
+                    <input type="file" class="form-control news-img" id="news-img3" accept="image/png,image/jpg,image/jpeg" multiple="multiple" name="img">
+                    <p class="help-block">*娱乐页签必须上传png,jpg,jpeg文件</p>
+                </div>
+                <div class="form-group">
+                    <label for="date">Add date:</label>
+                    <input type="date" class="form-control add-date" id="date" value="" required="required" name="addDate">
+                </div>
+                <div class="form-group">
+                    <label for="news-tab">新闻页签：</label>
+                    <select class="form-control news-tab" id="news-tab" required="required" name="newsTab">
+                        <option >various</option>
+                        <option >location</option>
+                        <option >entertainment</option>
+                    </select>
+                    <p class="help-block">*请填写所属新闻页签：various代表百家；location代表本地；entertainment代表娱乐</p>
+                </div>
+                <button type="submit" class="btn btn-primary ml-20" id="add-submit">添加</button>
+                <button type="reset" class="btn btn-primary ml-20">重置</button>
+            </form>
+            <!-- 用于承载增删查改 与列表查询 -->
+        </div>
+        <div class="left-con">
+            <div class="list-group">
+                <button type="button" class="list-group-item ntab" value="various">百家</button>
+                <button type="button" class="list-group-item ntab" value="location">本地</button>
+                <button type="button" class="list-group-item ntab" value="entertainment">娱乐</button>
+                <button type="button" class="list-group-item" id="addNewsBtn">添加新闻</button>
+            </div>
+        </div>
+    </div>
+    <footer></footer>
+</body>
+<script src="/javascripts/admin.js"></script>
+
+</html>
